@@ -5,6 +5,8 @@
 ## 📌 Project Overview
 Dự án thiết kế và tổng hợp (Synthesis) vi xử lý RISC-V 32-bit dựa trên tập lệnh RV32I, ứng dụng kiến trúc đường ống 5 bước (5-Stage Pipeline). Hệ thống được tích hợp khối phân tích và giải quyết xung đột (Hazard Unit) thời gian thực, đồng thời được tối ưu hóa để triển khai và gỡ lỗi trực tiếp trên bo mạch FPGA thông qua các ngoại vi vật lý (LED, 7-Segment Display, Nút nhấn).
 
+![Datapath Waveform](pictures/diagrams/Risc-V_Pipe.png)
+
 ## 🛠️ Tools & Technologies
 * **Hardware Description Language:** Verilog HDL
 * **Architecture:** RISC-V (RV32I Base Integer Instruction Set)

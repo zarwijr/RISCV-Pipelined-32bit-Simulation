@@ -1,0 +1,1217 @@
+Analysis & Synthesis report for RVPL_FPGA
+Fri Jun 26 15:19:56 2026
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis RAM Summary
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Registers Added for RAM Pass-Through Logic
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for Register_File:RegFiles|altsyncram:Regfile_rtl_0|altsyncram_fmj1:auto_generated
+ 14. Source assignments for Register_File:RegFiles|altsyncram:Regfile_rtl_1|altsyncram_fmj1:auto_generated
+ 15. Source assignments for Data_Memory:DMEM|altsyncram:RAM_rtl_2|altsyncram_ncj1:auto_generated
+ 16. Parameter Settings for Inferred Entity Instance: Register_File:RegFiles|altsyncram:Regfile_rtl_0
+ 17. Parameter Settings for Inferred Entity Instance: Register_File:RegFiles|altsyncram:Regfile_rtl_1
+ 18. Parameter Settings for Inferred Entity Instance: Data_Memory:DMEM|altsyncram:RAM_rtl_2
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "Control_Unit:Control"
+ 21. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Jun 26 15:19:56 2026    ;
+; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Revision Name                      ; RVPL_FPGA                                ;
+; Top-level Entity Name              ; Pipelined_RISCV                          ;
+; Family                             ; Cyclone II                               ;
+; Total logic elements               ; 1,041                                    ;
+;     Total combinational functions  ; 887                                      ;
+;     Dedicated logic registers      ; 482                                      ;
+; Total registers                    ; 482                                      ;
+; Total pins                         ; 296                                      ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 3,072                                    ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                            ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Option                                                         ; Setting            ; Default Value      ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Device                                                         ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                          ; Pipelined_RISCV    ; RVPL_FPGA          ;
+; Family name                                                    ; Cyclone II         ; Stratix II         ;
+; Type of Retiming Performed During Resynthesis                  ; Full               ;                    ;
+; Resynthesis Optimization Effort                                ; Normal             ;                    ;
+; Physical Synthesis Level for Resynthesis                       ; Normal             ;                    ;
+; Use Generated Physical Constraints File                        ; On                 ;                    ;
+; Use smart compilation                                          ; Off                ; Off                ;
+; Restructure Multiplexers                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                            ; Off                ; Off                ;
+; Preserve fewer node names                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                      ; Off                ; Off                ;
+; Verilog Version                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                       ; Auto               ; Auto               ;
+; Safe State Machine                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                              ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                     ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                 ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                        ; On                 ; On                 ;
+; Parallel Synthesis                                             ; Off                ; Off                ;
+; DSP Block Balancing                                            ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                 ; Off                ; Off                ;
+; Optimization Technique                                         ; Balanced           ; Balanced           ;
+; Carry Chain Length                                             ; 70                 ; 70                 ;
+; Auto Carry Chains                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                          ; Off                ; Off                ;
+; Auto ROM Replacement                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                  ; On                 ; On                 ;
+; Strict RAM Replacement                                         ; Off                ; Off                ;
+; Allow Synchronous Control Signals                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                         ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                              ; Off                ; Off                ;
+; Auto Resource Sharing                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                  ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing            ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives              ; Off                ; Off                ;
+; Timing-Driven Synthesis                                        ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                             ; Off                ; Off                ;
+; Synchronization Register Chain Length                          ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report       ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report      ; 100                ; 100                ;
+; Clock MUX Protection                                           ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                    ; Off                ; Off                ;
+; Block Design Naming                                            ; Auto               ; Auto               ;
+; SDC constraint protection                                      ; Off                ; Off                ;
+; Synthesis Effort                                               ; Auto               ; Auto               ;
+; Allows Asynchronous Clear Usage For Shift Register Replacement ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                             ; Medium             ; Medium             ;
++----------------------------------------------------------------+--------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                       ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+
+; alu.v                            ; yes             ; User Verilog HDL File        ; C:/Users/huyle/OneDrive/Desktop/RVPL/alu.v                         ;
+; Control_Unit.v                   ; yes             ; User Verilog HDL File        ; C:/Users/huyle/OneDrive/Desktop/RVPL/Control_Unit.v                ;
+; Data_Memory.v                    ; yes             ; User Verilog HDL File        ; C:/Users/huyle/OneDrive/Desktop/RVPL/Data_Memory.v                 ;
+; Extend.v                         ; yes             ; User Verilog HDL File        ; C:/Users/huyle/OneDrive/Desktop/RVPL/Extend.v                      ;
+; Hazard_Unit.v                    ; yes             ; User Verilog HDL File        ; C:/Users/huyle/OneDrive/Desktop/RVPL/Hazard_Unit.v                 ;
+; Instruction_Memory.v             ; yes             ; User Verilog HDL File        ; C:/Users/huyle/OneDrive/Desktop/RVPL/Instruction_Memory.v          ;
+; mux3_1.v                         ; yes             ; User Verilog HDL File        ; C:/Users/huyle/OneDrive/Desktop/RVPL/mux3_1.v                      ;
+; Pipelined_RISCV.v                ; yes             ; User Verilog HDL File        ; C:/Users/huyle/OneDrive/Desktop/RVPL/Pipelined_RISCV.v             ;
+; Program_Counter_Pipe.v           ; yes             ; User Verilog HDL File        ; C:/Users/huyle/OneDrive/Desktop/RVPL/Program_Counter_Pipe.v        ;
+; reg_ex_mem.v                     ; yes             ; User Verilog HDL File        ; C:/Users/huyle/OneDrive/Desktop/RVPL/reg_ex_mem.v                  ;
+; reg_id_ex.v                      ; yes             ; User Verilog HDL File        ; C:/Users/huyle/OneDrive/Desktop/RVPL/reg_id_ex.v                   ;
+; reg_if_id.v                      ; yes             ; User Verilog HDL File        ; C:/Users/huyle/OneDrive/Desktop/RVPL/reg_if_id.v                   ;
+; reg_mem_wb.v                     ; yes             ; User Verilog HDL File        ; C:/Users/huyle/OneDrive/Desktop/RVPL/reg_mem_wb.v                  ;
+; Register_File.v                  ; yes             ; User Verilog HDL File        ; C:/Users/huyle/OneDrive/Desktop/RVPL/Register_File.v               ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altsyncram.tdf        ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/stratix_ram_block.inc ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_mux.inc           ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_decode.inc        ;
+; aglobal90.inc                    ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/aglobal90.inc         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/a_rdenreg.inc         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altrom.inc            ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altram.inc            ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altdpram.inc          ;
+; altqpram.inc                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altqpram.inc          ;
+; db/altsyncram_fmj1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/huyle/OneDrive/Desktop/RVPL/db/altsyncram_fmj1.tdf        ;
+; db/altsyncram_ncj1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/huyle/OneDrive/Desktop/RVPL/db/altsyncram_ncj1.tdf        ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 1,041 ;
+;                                             ;       ;
+; Total combinational functions               ; 887   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 316   ;
+;     -- 3 input functions                    ; 410   ;
+;     -- <=2 input functions                  ; 161   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 764   ;
+;     -- arithmetic mode                      ; 123   ;
+;                                             ;       ;
+; Total registers                             ; 482   ;
+;     -- Dedicated logic registers            ; 482   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 296   ;
+; Total memory bits                           ; 3072  ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 578   ;
+; Total fan-out                               ; 5758  ;
+; Average fan-out                             ; 3.27  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                    ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                             ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------+--------------+
+; |Pipelined_RISCV                          ; 887 (111)         ; 482 (0)      ; 3072        ; 0            ; 0       ; 0         ; 296  ; 0            ; |Pipelined_RISCV                                                                                ; work         ;
+;    |Control_Unit:Control|                 ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|Control_Unit:Control                                                           ; work         ;
+;    |Data_Memory:DMEM|                     ; 70 (70)           ; 71 (71)      ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|Data_Memory:DMEM                                                               ; work         ;
+;       |altsyncram:RAM_rtl_2|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|Data_Memory:DMEM|altsyncram:RAM_rtl_2                                          ; work         ;
+;          |altsyncram_ncj1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|Data_Memory:DMEM|altsyncram:RAM_rtl_2|altsyncram_ncj1:auto_generated           ; work         ;
+;    |Extend:Imm_Ext|                       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|Extend:Imm_Ext                                                                 ; work         ;
+;    |Hazard_Unit:Hazard_Controller|        ; 22 (22)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|Hazard_Unit:Hazard_Controller                                                  ; work         ;
+;    |Instruction_Memory:IMEM|              ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|Instruction_Memory:IMEM                                                        ; work         ;
+;    |Program_Counter_Pipe:PC_Register|     ; 31 (31)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|Program_Counter_Pipe:PC_Register                                               ; work         ;
+;    |Register_File:RegFiles|               ; 136 (136)         ; 70 (70)      ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|Register_File:RegFiles                                                         ; work         ;
+;       |altsyncram:Regfile_rtl_0|          ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|Register_File:RegFiles|altsyncram:Regfile_rtl_0                                ; work         ;
+;          |altsyncram_fmj1:auto_generated| ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|Register_File:RegFiles|altsyncram:Regfile_rtl_0|altsyncram_fmj1:auto_generated ; work         ;
+;       |altsyncram:Regfile_rtl_1|          ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|Register_File:RegFiles|altsyncram:Regfile_rtl_1                                ; work         ;
+;          |altsyncram_fmj1:auto_generated| ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|Register_File:RegFiles|altsyncram:Regfile_rtl_1|altsyncram_fmj1:auto_generated ; work         ;
+;    |alu:Core_ALU|                         ; 130 (130)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|alu:Core_ALU                                                                   ; work         ;
+;    |mux3_1:Mux_ForwardA|                  ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|mux3_1:Mux_ForwardA                                                            ; work         ;
+;    |mux3_1:Mux_ForwardB|                  ; 65 (65)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|mux3_1:Mux_ForwardB                                                            ; work         ;
+;    |reg_ex_mem:REG_EX_MEM|                ; 0 (0)             ; 71 (71)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|reg_ex_mem:REG_EX_MEM                                                          ; work         ;
+;    |reg_id_ex:REG_ID_EX|                  ; 178 (178)         ; 120 (120)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|reg_id_ex:REG_ID_EX                                                            ; work         ;
+;    |reg_if_id:REG_IF_ID|                  ; 60 (60)           ; 48 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|reg_if_id:REG_IF_ID                                                            ; work         ;
+;    |reg_mem_wb:REG_MEM_WB|                ; 0 (0)             ; 70 (70)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipelined_RISCV|reg_mem_wb:REG_MEM_WB                                                          ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                          ;
++-------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------------------------+
+; Name                                                                                      ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                              ;
++-------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------------------------+
+; Data_Memory:DMEM|altsyncram:RAM_rtl_2|altsyncram_ncj1:auto_generated|ALTSYNCRAM           ; AUTO ; Simple Dual Port ; 64           ; 32           ; 64           ; 32           ; 2048 ; db/RVPL_FPGA.ram0_Data_Memory_76112063.hdl.mif   ;
+; Register_File:RegFiles|altsyncram:Regfile_rtl_0|altsyncram_fmj1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; db/RVPL_FPGA.ram0_Register_File_605be989.hdl.mif ;
+; Register_File:RegFiles|altsyncram:Regfile_rtl_1|altsyncram_fmj1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; db/RVPL_FPGA.ram0_Register_File_605be989.hdl.mif ;
++-------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; reg_id_ex:REG_ID_EX|ResultSrcE[1]       ; Stuck at GND due to stuck port data_in ;
+; reg_ex_mem:REG_EX_MEM|ResultSrcM[1]     ; Stuck at GND due to stuck port data_in ;
+; reg_mem_wb:REG_MEM_WB|ResultSrcW[1]     ; Stuck at GND due to stuck port data_in ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[31]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[31]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[31]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[30]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[30]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[30]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[29]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[29]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[29]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[28]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[28]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[28]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[27]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[27]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[27]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[26]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[26]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[26]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[25]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[25]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[25]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[24]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[24]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[24]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[23]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[23]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[23]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[22]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[22]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[22]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[21]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[21]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[21]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[20]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[20]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[20]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[19]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[19]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[19]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[18]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[18]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[18]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[17]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[17]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[17]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[16]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[16]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[16]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[15]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[15]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[15]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[14]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[14]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[14]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[13]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[13]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[13]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[12]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[12]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[12]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[11]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[11]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[11]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[10]  ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[10]  ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[10]    ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[9]   ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[9]   ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[9]     ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[8]   ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[8]   ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[8]     ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[7]   ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[7]   ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[7]     ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[6]   ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[6]   ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[6]     ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[5]   ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[5]   ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[5]     ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[4]   ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[4]   ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[4]     ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[3]   ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[3]   ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[3]     ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[2]   ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[2]   ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[2]     ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[1]   ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[1]   ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[1]     ; Lost fanout                            ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[0]   ; Lost fanout                            ;
+; reg_ex_mem:REG_EX_MEM|pc_plus4_out[0]   ; Lost fanout                            ;
+; reg_id_ex:REG_ID_EX|pc_plus4_out[0]     ; Lost fanout                            ;
+; reg_if_id:REG_IF_ID|pc_plus4_out[0..31] ; Lost fanout                            ;
+; Total Number of Removed Registers = 269 ;                                        ;
++-----------------------------------------+----------------------------------------+
+* Table truncated at 100 items. To change the number of removed registers reported, set the "Number of Removed Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                         ;
++---------------------------------------+---------------------------+---------------------------------------------------------------------------------+
+; Register name                         ; Reason for Removal        ; Registers Removed due to This Register                                          ;
++---------------------------------------+---------------------------+---------------------------------------------------------------------------------+
+; reg_id_ex:REG_ID_EX|ResultSrcE[1]     ; Stuck at GND              ; reg_ex_mem:REG_EX_MEM|ResultSrcM[1], reg_mem_wb:REG_MEM_WB|ResultSrcW[1],       ;
+;                                       ; due to stuck port data_in ; reg_mem_wb:REG_MEM_WB|pc_plus4_out[31], reg_ex_mem:REG_EX_MEM|pc_plus4_out[31], ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|pc_plus4_out[31], reg_mem_wb:REG_MEM_WB|pc_plus4_out[30],   ;
+;                                       ;                           ; reg_ex_mem:REG_EX_MEM|pc_plus4_out[30], reg_id_ex:REG_ID_EX|pc_plus4_out[30],   ;
+;                                       ;                           ; reg_mem_wb:REG_MEM_WB|pc_plus4_out[29], reg_ex_mem:REG_EX_MEM|pc_plus4_out[29], ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|pc_plus4_out[29], reg_mem_wb:REG_MEM_WB|pc_plus4_out[28],   ;
+;                                       ;                           ; reg_ex_mem:REG_EX_MEM|pc_plus4_out[28], reg_id_ex:REG_ID_EX|pc_plus4_out[28],   ;
+;                                       ;                           ; reg_mem_wb:REG_MEM_WB|pc_plus4_out[27], reg_ex_mem:REG_EX_MEM|pc_plus4_out[27], ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|pc_plus4_out[27], reg_mem_wb:REG_MEM_WB|pc_plus4_out[26],   ;
+;                                       ;                           ; reg_ex_mem:REG_EX_MEM|pc_plus4_out[26], reg_id_ex:REG_ID_EX|pc_plus4_out[26],   ;
+;                                       ;                           ; reg_mem_wb:REG_MEM_WB|pc_plus4_out[25], reg_ex_mem:REG_EX_MEM|pc_plus4_out[25], ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|pc_plus4_out[25], reg_mem_wb:REG_MEM_WB|pc_plus4_out[24],   ;
+;                                       ;                           ; reg_ex_mem:REG_EX_MEM|pc_plus4_out[24], reg_id_ex:REG_ID_EX|pc_plus4_out[24],   ;
+;                                       ;                           ; reg_mem_wb:REG_MEM_WB|pc_plus4_out[23], reg_ex_mem:REG_EX_MEM|pc_plus4_out[23], ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|pc_plus4_out[23], reg_mem_wb:REG_MEM_WB|pc_plus4_out[22],   ;
+;                                       ;                           ; reg_ex_mem:REG_EX_MEM|pc_plus4_out[22], reg_id_ex:REG_ID_EX|pc_plus4_out[22],   ;
+;                                       ;                           ; reg_mem_wb:REG_MEM_WB|pc_plus4_out[21], reg_ex_mem:REG_EX_MEM|pc_plus4_out[21], ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|pc_plus4_out[21], reg_mem_wb:REG_MEM_WB|pc_plus4_out[20],   ;
+;                                       ;                           ; reg_ex_mem:REG_EX_MEM|pc_plus4_out[20], reg_id_ex:REG_ID_EX|pc_plus4_out[20],   ;
+;                                       ;                           ; reg_mem_wb:REG_MEM_WB|pc_plus4_out[19], reg_ex_mem:REG_EX_MEM|pc_plus4_out[19], ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|pc_plus4_out[19], reg_mem_wb:REG_MEM_WB|pc_plus4_out[18],   ;
+;                                       ;                           ; reg_ex_mem:REG_EX_MEM|pc_plus4_out[18], reg_id_ex:REG_ID_EX|pc_plus4_out[18],   ;
+;                                       ;                           ; reg_mem_wb:REG_MEM_WB|pc_plus4_out[17], reg_ex_mem:REG_EX_MEM|pc_plus4_out[17], ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|pc_plus4_out[17], reg_mem_wb:REG_MEM_WB|pc_plus4_out[16],   ;
+;                                       ;                           ; reg_ex_mem:REG_EX_MEM|pc_plus4_out[16], reg_id_ex:REG_ID_EX|pc_plus4_out[16],   ;
+;                                       ;                           ; reg_mem_wb:REG_MEM_WB|pc_plus4_out[15], reg_ex_mem:REG_EX_MEM|pc_plus4_out[15], ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|pc_plus4_out[15], reg_mem_wb:REG_MEM_WB|pc_plus4_out[14],   ;
+;                                       ;                           ; reg_ex_mem:REG_EX_MEM|pc_plus4_out[14], reg_id_ex:REG_ID_EX|pc_plus4_out[14],   ;
+;                                       ;                           ; reg_mem_wb:REG_MEM_WB|pc_plus4_out[13], reg_ex_mem:REG_EX_MEM|pc_plus4_out[13], ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|pc_plus4_out[13], reg_mem_wb:REG_MEM_WB|pc_plus4_out[12],   ;
+;                                       ;                           ; reg_ex_mem:REG_EX_MEM|pc_plus4_out[12], reg_id_ex:REG_ID_EX|pc_plus4_out[12],   ;
+;                                       ;                           ; reg_mem_wb:REG_MEM_WB|pc_plus4_out[11], reg_ex_mem:REG_EX_MEM|pc_plus4_out[11], ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|pc_plus4_out[11], reg_mem_wb:REG_MEM_WB|pc_plus4_out[10],   ;
+;                                       ;                           ; reg_ex_mem:REG_EX_MEM|pc_plus4_out[10], reg_id_ex:REG_ID_EX|pc_plus4_out[10],   ;
+;                                       ;                           ; reg_mem_wb:REG_MEM_WB|pc_plus4_out[9], reg_ex_mem:REG_EX_MEM|pc_plus4_out[9],   ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|pc_plus4_out[9], reg_mem_wb:REG_MEM_WB|pc_plus4_out[8],     ;
+;                                       ;                           ; reg_ex_mem:REG_EX_MEM|pc_plus4_out[8], reg_id_ex:REG_ID_EX|pc_plus4_out[8],     ;
+;                                       ;                           ; reg_mem_wb:REG_MEM_WB|pc_plus4_out[7], reg_ex_mem:REG_EX_MEM|pc_plus4_out[7],   ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|pc_plus4_out[7], reg_mem_wb:REG_MEM_WB|pc_plus4_out[3],     ;
+;                                       ;                           ; reg_ex_mem:REG_EX_MEM|pc_plus4_out[3], reg_id_ex:REG_ID_EX|pc_plus4_out[3],     ;
+;                                       ;                           ; reg_mem_wb:REG_MEM_WB|pc_plus4_out[2], reg_ex_mem:REG_EX_MEM|pc_plus4_out[2],   ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|pc_plus4_out[2], reg_mem_wb:REG_MEM_WB|pc_plus4_out[1],     ;
+;                                       ;                           ; reg_ex_mem:REG_EX_MEM|pc_plus4_out[1], reg_id_ex:REG_ID_EX|pc_plus4_out[1],     ;
+;                                       ;                           ; reg_mem_wb:REG_MEM_WB|pc_plus4_out[0], reg_ex_mem:REG_EX_MEM|pc_plus4_out[0],   ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|pc_plus4_out[0], reg_if_id:REG_IF_ID|pc_plus4_out[0],       ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|pc_plus4_out[31], reg_if_id:REG_IF_ID|pc_plus4_out[30],     ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|pc_plus4_out[29], reg_if_id:REG_IF_ID|pc_plus4_out[28],     ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|pc_plus4_out[27], reg_if_id:REG_IF_ID|pc_plus4_out[26],     ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|pc_plus4_out[25], reg_if_id:REG_IF_ID|pc_plus4_out[24],     ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|pc_plus4_out[23], reg_if_id:REG_IF_ID|pc_plus4_out[22],     ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|pc_plus4_out[21], reg_if_id:REG_IF_ID|pc_plus4_out[20],     ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|pc_plus4_out[19], reg_if_id:REG_IF_ID|pc_plus4_out[18],     ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|pc_plus4_out[17], reg_if_id:REG_IF_ID|pc_plus4_out[16],     ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|pc_plus4_out[15], reg_if_id:REG_IF_ID|pc_plus4_out[14],     ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|pc_plus4_out[13], reg_if_id:REG_IF_ID|pc_plus4_out[12],     ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|pc_plus4_out[11], reg_if_id:REG_IF_ID|pc_plus4_out[10],     ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|pc_plus4_out[9], reg_if_id:REG_IF_ID|pc_plus4_out[8],       ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|pc_plus4_out[7], reg_if_id:REG_IF_ID|pc_plus4_out[3],       ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|pc_plus4_out[2], reg_if_id:REG_IF_ID|pc_plus4_out[1],       ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|instr_out[19], reg_if_id:REG_IF_ID|instr_out[18],           ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|instr_out[16], reg_if_id:REG_IF_ID|instr_out[24],           ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|instr_out[2], reg_if_id:REG_IF_ID|instr_out[3],             ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|instr_out[11], reg_if_id:REG_IF_ID|instr_out[12],           ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|instr_out[14], reg_if_id:REG_IF_ID|instr_out[27],           ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|instr_out[28], reg_if_id:REG_IF_ID|instr_out[29],           ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|instr_out[31], Register_File:RegFiles|Regfile_0_bypass[4],  ;
+;                                       ;                           ; Register_File:RegFiles|Regfile_0_bypass[8],                                     ;
+;                                       ;                           ; Register_File:RegFiles|Regfile_0_bypass[10],                                    ;
+;                                       ;                           ; Register_File:RegFiles|Regfile_34_bypass[10], reg_id_ex:REG_ID_EX|rs1_out[4],   ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|rs1_out[3], reg_id_ex:REG_ID_EX|rs1_out[1],                 ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|rs2_out[4], reg_id_ex:REG_ID_EX|rd_out[4],                  ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|ALUControlE[1], reg_id_ex:REG_ID_EX|imm_ext_out[7],         ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|imm_ext_out[8], reg_id_ex:REG_ID_EX|imm_ext_out[9],         ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|imm_ext_out[31], reg_ex_mem:REG_EX_MEM|rd_out[4],           ;
+;                                       ;                           ; reg_id_ex:REG_ID_EX|imm_ext_out[4]                                              ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[6] ; Lost Fanouts              ; reg_ex_mem:REG_EX_MEM|pc_plus4_out[6], reg_id_ex:REG_ID_EX|pc_plus4_out[6],     ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|pc_plus4_out[6]                                             ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[5] ; Lost Fanouts              ; reg_ex_mem:REG_EX_MEM|pc_plus4_out[5], reg_id_ex:REG_ID_EX|pc_plus4_out[5],     ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|pc_plus4_out[5]                                             ;
+; reg_mem_wb:REG_MEM_WB|pc_plus4_out[4] ; Lost Fanouts              ; reg_ex_mem:REG_EX_MEM|pc_plus4_out[4], reg_id_ex:REG_ID_EX|pc_plus4_out[4],     ;
+;                                       ;                           ; reg_if_id:REG_IF_ID|pc_plus4_out[4]                                             ;
+; reg_mem_wb:REG_MEM_WB|rd_out[4]       ; Stuck at GND              ; Register_File:RegFiles|Regfile_0_bypass[9],                                     ;
+;                                       ; due to stuck port data_in ; Register_File:RegFiles|Regfile_34_bypass[9]                                     ;
++---------------------------------------+---------------------------+---------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 482   ;
+; Number of registers using Synchronous Clear  ; 10    ;
+; Number of registers using Synchronous Load   ; 30    ;
+; Number of registers using Asynchronous Clear ; 342   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 138   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic                                       ;
++----------------------------------------------+-----------------------------------+
+; Register Name                                ; RAM Name                          ;
++----------------------------------------------+-----------------------------------+
+; Register_File:RegFiles|Regfile_0_bypass[0]   ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[1]   ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[2]   ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[3]   ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[4]   ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[5]   ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[6]   ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[7]   ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[8]   ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[9]   ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[10]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[11]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[12]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[13]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[14]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[15]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[16]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[17]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[18]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[19]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[20]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[21]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[22]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[23]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[24]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[25]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[26]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[27]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[28]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[29]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[30]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[31]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[32]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[33]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[34]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[35]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[36]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[37]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[38]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[39]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[40]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[41]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_0_bypass[42]  ; Register_File:RegFiles|Regfile~0  ;
+; Register_File:RegFiles|Regfile_34_bypass[0]  ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[1]  ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[2]  ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[3]  ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[4]  ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[5]  ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[6]  ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[7]  ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[8]  ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[9]  ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[10] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[11] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[12] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[13] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[14] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[15] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[16] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[17] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[18] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[19] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[20] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[21] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[22] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[23] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[24] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[25] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[26] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[27] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[28] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[29] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[30] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[31] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[32] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[33] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[34] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[35] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[36] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[37] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[38] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[39] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[40] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[41] ; Register_File:RegFiles|Regfile~34 ;
+; Register_File:RegFiles|Regfile_34_bypass[42] ; Register_File:RegFiles|Regfile~34 ;
+; Data_Memory:DMEM|RAM_0_bypass[0]             ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[1]             ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[2]             ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[3]             ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[4]             ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[5]             ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[6]             ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[7]             ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[8]             ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[9]             ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[10]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[11]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[12]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[13]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[14]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[15]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[16]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[17]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[18]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[19]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[20]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[21]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[22]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[23]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[24]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[25]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[26]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[27]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[28]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[29]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[30]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[31]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[32]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[33]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[34]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[35]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[36]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[37]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[38]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[39]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[40]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[41]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[42]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[43]            ; Data_Memory:DMEM|RAM~0            ;
+; Data_Memory:DMEM|RAM_0_bypass[44]            ; Data_Memory:DMEM|RAM~0            ;
++----------------------------------------------+-----------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Pipelined_RISCV|reg_id_ex:REG_ID_EX|imm_ext_out[6]     ;
+; 3:1                ; 45 bits   ; 90 LEs        ; 45 LEs               ; 45 LEs                 ; Yes        ; |Pipelined_RISCV|reg_if_id:REG_IF_ID|pc_out[1]          ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |Pipelined_RISCV|reg_id_ex:REG_ID_EX|imm_ext_out[1]     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Pipelined_RISCV|mux3_1:Mux_ForwardA|Mux28              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Pipelined_RISCV|mux3_1:Mux_ForwardB|Mux20              ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Pipelined_RISCV|Data_Memory:DMEM|RAM                   ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |Pipelined_RISCV|reg_if_id:REG_IF_ID|instr_out~40       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Pipelined_RISCV|Register_File:RegFiles|read_data_1[21] ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Pipelined_RISCV|Register_File:RegFiles|read_data_2[9]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Source assignments for Register_File:RegFiles|altsyncram:Regfile_rtl_0|altsyncram_fmj1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------+
+; Assignment                      ; Value              ; From ; To                                      ;
++---------------------------------+--------------------+------+-----------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                       ;
++---------------------------------+--------------------+------+-----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Source assignments for Register_File:RegFiles|altsyncram:Regfile_rtl_1|altsyncram_fmj1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------+
+; Assignment                      ; Value              ; From ; To                                      ;
++---------------------------------+--------------------+------+-----------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                       ;
++---------------------------------+--------------------+------+-----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Source assignments for Data_Memory:DMEM|altsyncram:RAM_rtl_2|altsyncram_ncj1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------+
+; Assignment                      ; Value              ; From ; To                            ;
++---------------------------------+--------------------+------+-------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                             ;
++---------------------------------+--------------------+------+-------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Register_File:RegFiles|altsyncram:Regfile_rtl_0       ;
++------------------------------------+--------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                            ; Type           ;
++------------------------------------+--------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                               ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                              ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                               ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                              ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                                ; Untyped        ;
+; OPERATION_MODE                     ; DUAL_PORT                                        ; Untyped        ;
+; WIDTH_A                            ; 32                                               ; Untyped        ;
+; WIDTHAD_A                          ; 5                                                ; Untyped        ;
+; NUMWORDS_A                         ; 32                                               ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                     ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                             ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                             ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                             ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                             ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                             ; Untyped        ;
+; WIDTH_B                            ; 32                                               ; Untyped        ;
+; WIDTHAD_B                          ; 5                                                ; Untyped        ;
+; NUMWORDS_B                         ; 32                                               ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                           ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                           ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                           ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK0                                           ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                     ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                           ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                             ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                             ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                             ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                             ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                             ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                             ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                                ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                                ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                             ; Untyped        ;
+; BYTE_SIZE                          ; 8                                                ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                        ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                             ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                             ; Untyped        ;
+; INIT_FILE                          ; db/RVPL_FPGA.ram0_Register_File_605be989.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                           ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                                ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                           ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                           ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                           ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                           ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                  ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                  ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                            ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone II                                       ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_fmj1                                  ; Untyped        ;
++------------------------------------+--------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Register_File:RegFiles|altsyncram:Regfile_rtl_1       ;
++------------------------------------+--------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                            ; Type           ;
++------------------------------------+--------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                               ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                              ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                               ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                              ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                                ; Untyped        ;
+; OPERATION_MODE                     ; DUAL_PORT                                        ; Untyped        ;
+; WIDTH_A                            ; 32                                               ; Untyped        ;
+; WIDTHAD_A                          ; 5                                                ; Untyped        ;
+; NUMWORDS_A                         ; 32                                               ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                     ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                             ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                             ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                             ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                             ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                             ; Untyped        ;
+; WIDTH_B                            ; 32                                               ; Untyped        ;
+; WIDTHAD_B                          ; 5                                                ; Untyped        ;
+; NUMWORDS_B                         ; 32                                               ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                           ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                           ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                           ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK0                                           ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                     ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                           ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                             ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                             ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                             ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                             ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                             ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                             ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                                ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                                ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                             ; Untyped        ;
+; BYTE_SIZE                          ; 8                                                ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                        ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                             ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                             ; Untyped        ;
+; INIT_FILE                          ; db/RVPL_FPGA.ram0_Register_File_605be989.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                           ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                                ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                           ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                           ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                           ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                           ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                  ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                  ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                            ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone II                                       ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_fmj1                                  ; Untyped        ;
++------------------------------------+--------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Data_Memory:DMEM|altsyncram:RAM_rtl_2               ;
++------------------------------------+------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                          ; Type           ;
++------------------------------------+------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                              ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                             ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                            ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                             ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                            ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                              ; Untyped        ;
+; OPERATION_MODE                     ; DUAL_PORT                                      ; Untyped        ;
+; WIDTH_A                            ; 32                                             ; Untyped        ;
+; WIDTHAD_A                          ; 6                                              ; Untyped        ;
+; NUMWORDS_A                         ; 64                                             ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                   ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                           ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                           ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                           ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                           ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                           ; Untyped        ;
+; WIDTH_B                            ; 32                                             ; Untyped        ;
+; WIDTHAD_B                          ; 6                                              ; Untyped        ;
+; NUMWORDS_B                         ; 64                                             ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                         ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                         ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                         ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK0                                         ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                   ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                         ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                           ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                           ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                           ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                           ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                           ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                           ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                              ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                              ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                           ; Untyped        ;
+; BYTE_SIZE                          ; 8                                              ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                      ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                           ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                           ; Untyped        ;
+; INIT_FILE                          ; db/RVPL_FPGA.ram0_Data_Memory_76112063.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                         ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                              ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                         ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                         ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                         ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                         ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                          ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone II                                     ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_ncj1                                ; Untyped        ;
++------------------------------------+------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                            ;
++-------------------------------------------+-------------------------------------------------+
+; Name                                      ; Value                                           ;
++-------------------------------------------+-------------------------------------------------+
+; Number of entity instances                ; 3                                               ;
+; Entity Instance                           ; Register_File:RegFiles|altsyncram:Regfile_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                       ;
+;     -- WIDTH_A                            ; 32                                              ;
+;     -- NUMWORDS_A                         ; 32                                              ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                    ;
+;     -- WIDTH_B                            ; 32                                              ;
+;     -- NUMWORDS_B                         ; 32                                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                          ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                    ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                            ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                       ;
+; Entity Instance                           ; Register_File:RegFiles|altsyncram:Regfile_rtl_1 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                       ;
+;     -- WIDTH_A                            ; 32                                              ;
+;     -- NUMWORDS_A                         ; 32                                              ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                    ;
+;     -- WIDTH_B                            ; 32                                              ;
+;     -- NUMWORDS_B                         ; 32                                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                          ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                    ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                            ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                       ;
+; Entity Instance                           ; Data_Memory:DMEM|altsyncram:RAM_rtl_2           ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                       ;
+;     -- WIDTH_A                            ; 32                                              ;
+;     -- NUMWORDS_A                         ; 64                                              ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                    ;
+;     -- WIDTH_B                            ; 32                                              ;
+;     -- NUMWORDS_B                         ; 64                                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                          ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                    ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                            ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                       ;
++-------------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "Control_Unit:Control"   ;
++-------+--------+----------+------------------------+
+; Port  ; Type   ; Severity ; Details                ;
++-------+--------+----------+------------------------+
+; Zero  ; Input  ; Info     ; Stuck at GND           ;
+; PCSrc ; Output ; Info     ; Explicitly unconnected ;
++-------+--------+----------+------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Fri Jun 26 15:19:49 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RVPL_FPGA -c RVPL_FPGA
+Info: Found 1 design units, including 1 entities, in source file alu.v
+    Info: Found entity 1: alu
+Info: Found 1 design units, including 1 entities, in source file Control_Unit.v
+    Info: Found entity 1: Control_Unit
+Info: Found 1 design units, including 1 entities, in source file Data_Memory.v
+    Info: Found entity 1: Data_Memory
+Info: Found 1 design units, including 1 entities, in source file Extend.v
+    Info: Found entity 1: Extend
+Info: Found 1 design units, including 1 entities, in source file Hazard_Unit.v
+    Info: Found entity 1: Hazard_Unit
+Info: Found 1 design units, including 1 entities, in source file Instruction_Memory.v
+    Info: Found entity 1: Instruction_Memory
+Info: Found 1 design units, including 1 entities, in source file mux3_1.v
+    Info: Found entity 1: mux3_1
+Info: Found 1 design units, including 1 entities, in source file Pipelined_RISCV.v
+    Info: Found entity 1: Pipelined_RISCV
+Info: Found 1 design units, including 1 entities, in source file Pipelined_RISCV_tb.v
+    Info: Found entity 1: Pipelined_RISCV_tb
+Info: Found 1 design units, including 1 entities, in source file Program_Counter_Pipe.v
+    Info: Found entity 1: Program_Counter_Pipe
+Info: Found 1 design units, including 1 entities, in source file reg_ex_mem.v
+    Info: Found entity 1: reg_ex_mem
+Info: Found 1 design units, including 1 entities, in source file reg_id_ex.v
+    Info: Found entity 1: reg_id_ex
+Info: Found 1 design units, including 1 entities, in source file reg_if_id.v
+    Info: Found entity 1: reg_if_id
+Info: Found 1 design units, including 1 entities, in source file reg_mem_wb.v
+    Info: Found entity 1: reg_mem_wb
+Info: Found 1 design units, including 1 entities, in source file Register_File.v
+    Info: Found entity 1: Register_File
+Info: Elaborating entity "Pipelined_RISCV" for the top level hierarchy
+Info: Elaborating entity "Program_Counter_Pipe" for hierarchy "Program_Counter_Pipe:PC_Register"
+Info: Elaborating entity "Instruction_Memory" for hierarchy "Instruction_Memory:IMEM"
+Warning (10030): Net "Imemory.data_a[31]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[30]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[29]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[28]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[27]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[26]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[25]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[24]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[23]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[22]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[21]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[20]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[19]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[18]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[17]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[16]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[15]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[14]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[13]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[12]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[11]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[10]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[9]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[8]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[7]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[6]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[5]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[4]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[3]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[2]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[1]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.data_a[0]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.waddr_a[5]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.waddr_a[4]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.waddr_a[3]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.waddr_a[2]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.waddr_a[1]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.waddr_a[0]" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Imemory.we_a" at Instruction_Memory.v(5) has no driver or initial value, using a default initial value '0'
+Info: Elaborating entity "reg_if_id" for hierarchy "reg_if_id:REG_IF_ID"
+Info: Elaborating entity "Control_Unit" for hierarchy "Control_Unit:Control"
+Info: Elaborating entity "Register_File" for hierarchy "Register_File:RegFiles"
+Info: Elaborating entity "Extend" for hierarchy "Extend:Imm_Ext"
+Info: Elaborating entity "reg_id_ex" for hierarchy "reg_id_ex:REG_ID_EX"
+Info: Elaborating entity "mux3_1" for hierarchy "mux3_1:Mux_ForwardA"
+Info: Elaborating entity "alu" for hierarchy "alu:Core_ALU"
+Info: Elaborating entity "reg_ex_mem" for hierarchy "reg_ex_mem:REG_EX_MEM"
+Info: Elaborating entity "Data_Memory" for hierarchy "Data_Memory:DMEM"
+Info: Elaborating entity "reg_mem_wb" for hierarchy "reg_mem_wb:REG_MEM_WB"
+Info: Elaborating entity "Hazard_Unit" for hierarchy "Hazard_Unit:Hazard_Controller"
+Warning: Inferred RAM node "Register_File:RegFiles|Regfile~0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning: Inferred RAM node "Register_File:RegFiles|Regfile~34" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning: Inferred RAM node "Data_Memory:DMEM|RAM~0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning: Memory Initialization File or Hexadecimal (Intel-Format) File "RVPL_FPGA.ram0_Instruction_Memory_6c21a04c.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info: Inferred 3 megafunctions from design logic
+    Info: Inferred altsyncram megafunction from the following design logic: "Register_File:RegFiles|Regfile~0" 
+        Info: Parameter OPERATION_MODE set to DUAL_PORT
+        Info: Parameter WIDTH_A set to 32
+        Info: Parameter WIDTHAD_A set to 5
+        Info: Parameter NUMWORDS_A set to 32
+        Info: Parameter WIDTH_B set to 32
+        Info: Parameter WIDTHAD_B set to 5
+        Info: Parameter NUMWORDS_B set to 32
+        Info: Parameter ADDRESS_ACLR_A set to NONE
+        Info: Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info: Parameter ADDRESS_ACLR_B set to NONE
+        Info: Parameter OUTDATA_ACLR_B set to NONE
+        Info: Parameter ADDRESS_REG_B set to CLOCK0
+        Info: Parameter INDATA_ACLR_A set to NONE
+        Info: Parameter WRCONTROL_ACLR_A set to NONE
+        Info: Parameter RAM_BLOCK_TYPE set to AUTO
+        Info: Parameter INIT_FILE set to db/RVPL_FPGA.ram0_Register_File_605be989.hdl.mif
+    Info: Inferred altsyncram megafunction from the following design logic: "Register_File:RegFiles|Regfile~34" 
+        Info: Parameter OPERATION_MODE set to DUAL_PORT
+        Info: Parameter WIDTH_A set to 32
+        Info: Parameter WIDTHAD_A set to 5
+        Info: Parameter NUMWORDS_A set to 32
+        Info: Parameter WIDTH_B set to 32
+        Info: Parameter WIDTHAD_B set to 5
+        Info: Parameter NUMWORDS_B set to 32
+        Info: Parameter ADDRESS_ACLR_A set to NONE
+        Info: Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info: Parameter ADDRESS_ACLR_B set to NONE
+        Info: Parameter OUTDATA_ACLR_B set to NONE
+        Info: Parameter ADDRESS_REG_B set to CLOCK0
+        Info: Parameter INDATA_ACLR_A set to NONE
+        Info: Parameter WRCONTROL_ACLR_A set to NONE
+        Info: Parameter RAM_BLOCK_TYPE set to AUTO
+        Info: Parameter INIT_FILE set to db/RVPL_FPGA.ram0_Register_File_605be989.hdl.mif
+    Info: Inferred altsyncram megafunction from the following design logic: "Data_Memory:DMEM|RAM~0" 
+        Info: Parameter OPERATION_MODE set to DUAL_PORT
+        Info: Parameter WIDTH_A set to 32
+        Info: Parameter WIDTHAD_A set to 6
+        Info: Parameter NUMWORDS_A set to 64
+        Info: Parameter WIDTH_B set to 32
+        Info: Parameter WIDTHAD_B set to 6
+        Info: Parameter NUMWORDS_B set to 64
+        Info: Parameter ADDRESS_ACLR_A set to NONE
+        Info: Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info: Parameter ADDRESS_ACLR_B set to NONE
+        Info: Parameter OUTDATA_ACLR_B set to NONE
+        Info: Parameter ADDRESS_REG_B set to CLOCK0
+        Info: Parameter INDATA_ACLR_A set to NONE
+        Info: Parameter WRCONTROL_ACLR_A set to NONE
+        Info: Parameter RAM_BLOCK_TYPE set to AUTO
+        Info: Parameter INIT_FILE set to db/RVPL_FPGA.ram0_Data_Memory_76112063.hdl.mif
+Info: Elaborated megafunction instantiation "Register_File:RegFiles|altsyncram:Regfile_rtl_0"
+Info: Instantiated megafunction "Register_File:RegFiles|altsyncram:Regfile_rtl_0" with the following parameter:
+    Info: Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info: Parameter "WIDTH_A" = "32"
+    Info: Parameter "WIDTHAD_A" = "5"
+    Info: Parameter "NUMWORDS_A" = "32"
+    Info: Parameter "WIDTH_B" = "32"
+    Info: Parameter "WIDTHAD_B" = "5"
+    Info: Parameter "NUMWORDS_B" = "32"
+    Info: Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info: Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info: Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info: Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info: Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info: Parameter "INDATA_ACLR_A" = "NONE"
+    Info: Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info: Parameter "RAM_BLOCK_TYPE" = "AUTO"
+    Info: Parameter "INIT_FILE" = "db/RVPL_FPGA.ram0_Register_File_605be989.hdl.mif"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_fmj1.tdf
+    Info: Found entity 1: altsyncram_fmj1
+Info: Elaborated megafunction instantiation "Register_File:RegFiles|altsyncram:Regfile_rtl_1"
+Info: Instantiated megafunction "Register_File:RegFiles|altsyncram:Regfile_rtl_1" with the following parameter:
+    Info: Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info: Parameter "WIDTH_A" = "32"
+    Info: Parameter "WIDTHAD_A" = "5"
+    Info: Parameter "NUMWORDS_A" = "32"
+    Info: Parameter "WIDTH_B" = "32"
+    Info: Parameter "WIDTHAD_B" = "5"
+    Info: Parameter "NUMWORDS_B" = "32"
+    Info: Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info: Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info: Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info: Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info: Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info: Parameter "INDATA_ACLR_A" = "NONE"
+    Info: Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info: Parameter "RAM_BLOCK_TYPE" = "AUTO"
+    Info: Parameter "INIT_FILE" = "db/RVPL_FPGA.ram0_Register_File_605be989.hdl.mif"
+Info: Elaborated megafunction instantiation "Data_Memory:DMEM|altsyncram:RAM_rtl_2"
+Info: Instantiated megafunction "Data_Memory:DMEM|altsyncram:RAM_rtl_2" with the following parameter:
+    Info: Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info: Parameter "WIDTH_A" = "32"
+    Info: Parameter "WIDTHAD_A" = "6"
+    Info: Parameter "NUMWORDS_A" = "64"
+    Info: Parameter "WIDTH_B" = "32"
+    Info: Parameter "WIDTHAD_B" = "6"
+    Info: Parameter "NUMWORDS_B" = "64"
+    Info: Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info: Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info: Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info: Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info: Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info: Parameter "INDATA_ACLR_A" = "NONE"
+    Info: Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info: Parameter "RAM_BLOCK_TYPE" = "AUTO"
+    Info: Parameter "INIT_FILE" = "db/RVPL_FPGA.ram0_Data_Memory_76112063.hdl.mif"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_ncj1.tdf
+    Info: Found entity 1: altsyncram_ncj1
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "InstrD_out[2]" is stuck at GND
+    Warning (13410): Pin "InstrD_out[3]" is stuck at GND
+    Warning (13410): Pin "InstrD_out[11]" is stuck at GND
+    Warning (13410): Pin "InstrD_out[12]" is stuck at GND
+    Warning (13410): Pin "InstrD_out[14]" is stuck at GND
+    Warning (13410): Pin "InstrD_out[16]" is stuck at GND
+    Warning (13410): Pin "InstrD_out[18]" is stuck at GND
+    Warning (13410): Pin "InstrD_out[19]" is stuck at GND
+    Warning (13410): Pin "InstrD_out[24]" is stuck at GND
+    Warning (13410): Pin "InstrD_out[27]" is stuck at GND
+    Warning (13410): Pin "InstrD_out[28]" is stuck at GND
+    Warning (13410): Pin "InstrD_out[29]" is stuck at GND
+    Warning (13410): Pin "InstrD_out[31]" is stuck at GND
+Info: 128 registers lost all their fanouts during netlist optimizations. The first 100 are displayed below.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_mem_wb:REG_MEM_WB|pc_plus4_out[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_ex_mem:REG_EX_MEM|pc_plus4_out[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_id_ex:REG_ID_EX|pc_plus4_out[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_if_id:REG_IF_ID|pc_plus4_out[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_if_id:REG_IF_ID|pc_plus4_out[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_if_id:REG_IF_ID|pc_plus4_out[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "reg_if_id:REG_IF_ID|pc_plus4_out[29]" lost all its fanouts during netlist optimizations.
+    Info: List truncated at 100 items
+Info: Removed 1 MSB VCC or GND address nodes from RAM block "Register_File:RegFiles|altsyncram:Regfile_rtl_0|altsyncram_fmj1:auto_generated|ALTSYNCRAM"
+Info: Removed 1 MSB VCC or GND address nodes from RAM block "Register_File:RegFiles|altsyncram:Regfile_rtl_1|altsyncram_fmj1:auto_generated|ALTSYNCRAM"
+Info: Implemented 1523 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 294 output pins
+    Info: Implemented 1131 logic cells
+    Info: Implemented 96 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 57 warnings
+    Info: Peak virtual memory: 419 megabytes
+    Info: Processing ended: Fri Jun 26 15:19:56 2026
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
+
+

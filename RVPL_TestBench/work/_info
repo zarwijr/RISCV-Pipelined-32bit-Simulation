@@ -1,0 +1,224 @@
+m255
+K3
+13
+cModel Technology
+dC:\altera\90\modelsim_ase\examples
+valu
+IY6[9L[SSmc:H79JYGI[[h0
+V0lOB`j40<OgAOGR4K46E>2
+Z0 dC:\altera\90\modelsim_ase\Labs\RVPL_Tb
+w1780631597
+8C:/altera/90/modelsim_ase/Labs/RVPL_Tb/alu.v
+FC:/altera/90/modelsim_ase/Labs/RVPL_Tb/alu.v
+L0 1
+Z1 OV;L;6.4a;39
+r1
+31
+Z2 o-work work -nocovercells -O0
+!s100 ZBI@i`gD`EKQ6ElmANzII1
+!s85 0
+vControl_Unit
+I49`jeU_6f7^mOSFoP:4UZ0
+V8Lk35ZPnP@5;JDmhKgl9^2
+Z3 dC:\altera\90\modelsim_ase\Labs\RVPL_Tb
+w1780738346
+8C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Control_Unit.v
+FC:/altera/90/modelsim_ase/Labs/RVPL_Tb/Control_Unit.v
+L0 1
+R1
+r1
+31
+R2
+n@control_@unit
+!s100 neo=95<_Q7DVjKRWPC5RN1
+!s85 0
+vData_Memory
+I9Lzo_FngO`L;77:>NHA2@1
+V60AX:<2_fjVg^MWFOTYJd3
+R3
+w1780738306
+8C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Data_Memory.v
+FC:/altera/90/modelsim_ase/Labs/RVPL_Tb/Data_Memory.v
+L0 1
+R1
+r1
+31
+R2
+n@data_@memory
+!s100 lcMJHM70lKD^TQ8Y6fQ7:3
+!s85 0
+vExtend
+I<MMDgm[V`jBlTF;RlTX5<3
+VWQ:XXE655XWH8lHH>1ZXk1
+R3
+w1780631578
+8C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Extend.v
+FC:/altera/90/modelsim_ase/Labs/RVPL_Tb/Extend.v
+L0 1
+R1
+r1
+31
+R2
+n@extend
+!s100 B1R`jfDzofRPK3^F9W1hX3
+!s85 0
+vHazard_Unit
+ICHWE1H@eFS`BL6gXnfk=m2
+Vb^4I<?Q:MB@D2kC`UQbF<0
+R3
+w1780630820
+8C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Hazard_Unit.v
+FC:/altera/90/modelsim_ase/Labs/RVPL_Tb/Hazard_Unit.v
+L0 1
+R1
+r1
+31
+R2
+n@hazard_@unit
+!s100 9SbaTCC`fhkhmkY>0F^dR2
+!s85 0
+vInstruction_Memory
+IiAfRLG^VQcCOXZhcL7DKG0
+V^=GFzH?PAMFjJdJBfhS?C0
+R3
+w1780645665
+8C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Instruction_Memory.v
+FC:/altera/90/modelsim_ase/Labs/RVPL_Tb/Instruction_Memory.v
+L0 1
+R1
+r1
+31
+R2
+n@instruction_@memory
+!s100 IlZM=KV[LQlIL3l^keHb30
+!s85 0
+vmux3_1
+I]3A^ocLZAzaAIRIzlM27U1
+V?L98AfI4[YF69a[bIJN9M3
+R3
+w1780631384
+8C:/altera/90/modelsim_ase/Labs/RVPL_Tb/mux3_1.v
+FC:/altera/90/modelsim_ase/Labs/RVPL_Tb/mux3_1.v
+L0 1
+R1
+r1
+31
+R2
+!s100 _mFf[4RUCMAn?3Ng533UE0
+!s85 0
+vPipelined_RISCV
+I2o2jbCnABLEA8A]oXYPmI1
+Vag80gZH^;hK`4oR=4SdTF2
+R3
+w1780738449
+8C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Pipelined_RISCV.v
+FC:/altera/90/modelsim_ase/Labs/RVPL_Tb/Pipelined_RISCV.v
+L0 1
+R1
+r1
+31
+R2
+n@pipelined_@r@i@s@c@v
+!s100 UUT06NI[5NQAk0HQfOO:Y3
+!s85 0
+vPipelined_RISCV_tb
+IjUee[8]`_Ql[I=?=Q0g933
+V1m8zdb_WeLY2BhO7]_^WZ0
+R3
+w1780825314
+8C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Pipelined_RISCV_tb.v
+FC:/altera/90/modelsim_ase/Labs/RVPL_Tb/Pipelined_RISCV_tb.v
+L0 3
+R1
+r1
+31
+R2
+n@pipelined_@r@i@s@c@v_tb
+!s100 JD_Gc6cl>1@YlZkfFE7@P0
+!s85 0
+vProgram_Counter_Pipe
+I1f<[EFn;n=lFA_0`4cKYG1
+VMoKTNGSb3XRGQEb=6OQ101
+R3
+w1780631227
+8C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Program_Counter_Pipe.v
+FC:/altera/90/modelsim_ase/Labs/RVPL_Tb/Program_Counter_Pipe.v
+L0 1
+R1
+r1
+31
+R2
+n@program_@counter_@pipe
+!s100 U6ejGGYlQ6RD93Ehg;k;z3
+!s85 0
+vreg_ex_mem
+I2L7;49igaez_>i>efH[kf3
+VQD0;GkUS?[f071WXbDm<E1
+R3
+w1780630716
+8C:/altera/90/modelsim_ase/Labs/RVPL_Tb/reg_ex_mem.v
+FC:/altera/90/modelsim_ase/Labs/RVPL_Tb/reg_ex_mem.v
+L0 1
+R1
+r1
+31
+R2
+!s100 9n4cNDQjC:?Sf>6RkD_O03
+!s85 0
+vreg_id_ex
+I2a6F3@ZNJc1=CjCLn?Se01
+VkhlDBW7C1zc<VdRW2CLoM2
+R3
+w1780630624
+8C:/altera/90/modelsim_ase/Labs/RVPL_Tb/reg_id_ex.v
+FC:/altera/90/modelsim_ase/Labs/RVPL_Tb/reg_id_ex.v
+L0 1
+R1
+r1
+31
+R2
+!s100 gn25D[jagIg6>z_n[1TA<3
+!s85 0
+vreg_if_id
+IdjeEQ^h3iW1IMBX:C00P32
+V14@0>=M0XT9g8Nfio:>S^0
+R3
+w1780630604
+8C:/altera/90/modelsim_ase/Labs/RVPL_Tb/reg_if_id.v
+FC:/altera/90/modelsim_ase/Labs/RVPL_Tb/reg_if_id.v
+L0 1
+R1
+r1
+31
+R2
+!s100 f2K=RhQ?FTD9A9HbzkD643
+!s85 0
+vreg_mem_wb
+IbaEYXKHC:nLn7R4moFaIE3
+V_lWHRl`NYBjXeJW]Hl:h73
+R3
+w1780630749
+8C:/altera/90/modelsim_ase/Labs/RVPL_Tb/reg_mem_wb.v
+FC:/altera/90/modelsim_ase/Labs/RVPL_Tb/reg_mem_wb.v
+L0 1
+R1
+r1
+31
+R2
+!s100 D[BMd^BbFO4m`G;_Xz4[g3
+!s85 0
+vRegister_File
+!s100 _7=F=aKICdLWUKS?gb>ec2
+IHV^cSSnIL_R6e:X5c=AjI3
+VU?6O[c0icOiWCQ`@13<P42
+R3
+w1780631554
+8C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Register_File.v
+FC:/altera/90/modelsim_ase/Labs/RVPL_Tb/Register_File.v
+L0 1
+R1
+r1
+!s85 0
+31
+R2
+n@register_@file

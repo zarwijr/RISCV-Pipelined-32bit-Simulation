@@ -1,0 +1,106 @@
+C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Control_Unit.v {1 {vlog -work work -nocovercells C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Control_Unit.v
+Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+-- Compiling module Control_Unit
+
+Top level modules:
+	Control_Unit
+
+} {} {}} C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Pipelined_RISCV.v {1 {vlog -work work -nocovercells C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Pipelined_RISCV.v
+Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+-- Compiling module Pipelined_RISCV
+
+Top level modules:
+	Pipelined_RISCV
+
+} {} {}} C:/altera/90/modelsim_ase/Labs/RVPL_Tb/reg_ex_mem.v {1 {vlog -work work -nocovercells C:/altera/90/modelsim_ase/Labs/RVPL_Tb/reg_ex_mem.v
+Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+-- Compiling module reg_ex_mem
+
+Top level modules:
+	reg_ex_mem
+
+} {} {}} C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Hazard_Unit.v {1 {vlog -work work -nocovercells C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Hazard_Unit.v
+Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+-- Compiling module Hazard_Unit
+
+Top level modules:
+	Hazard_Unit
+
+} {} {}} C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Instruction_Memory.v {1 {vlog -work work -nocovercells C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Instruction_Memory.v
+Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+-- Compiling module Instruction_Memory
+
+Top level modules:
+	Instruction_Memory
+
+} {} {}} C:/altera/90/modelsim_ase/Labs/RVPL_Tb/mux3_1.v {1 {vlog -work work -nocovercells C:/altera/90/modelsim_ase/Labs/RVPL_Tb/mux3_1.v
+Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+-- Compiling module mux3_1
+
+Top level modules:
+	mux3_1
+
+} {} {}} C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Pipelined_RISCV_tb.v {1 {vlog -work work -nocovercells C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Pipelined_RISCV_tb.v
+Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+-- Compiling module Pipelined_RISCV_tb
+
+Top level modules:
+	Pipelined_RISCV_tb
+
+} {} {}} C:/altera/90/modelsim_ase/Labs/RVPL_Tb/reg_id_ex.v {1 {vlog -work work -nocovercells C:/altera/90/modelsim_ase/Labs/RVPL_Tb/reg_id_ex.v
+Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+-- Compiling module reg_id_ex
+
+Top level modules:
+	reg_id_ex
+
+} {} {}} C:/altera/90/modelsim_ase/Labs/RVPL_Tb/reg_if_id.v {1 {vlog -work work -nocovercells C:/altera/90/modelsim_ase/Labs/RVPL_Tb/reg_if_id.v
+Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+-- Compiling module reg_if_id
+
+Top level modules:
+	reg_if_id
+
+} {} {}} C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Extend.v {1 {vlog -work work -nocovercells C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Extend.v
+Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+-- Compiling module Extend
+
+Top level modules:
+	Extend
+
+} {} {}} C:/altera/90/modelsim_ase/Labs/RVPL_Tb/alu.v {1 {vlog -work work -nocovercells C:/altera/90/modelsim_ase/Labs/RVPL_Tb/alu.v
+Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Data_Memory.v {1 {vlog -work work -nocovercells C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Data_Memory.v
+Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+-- Compiling module Data_Memory
+
+Top level modules:
+	Data_Memory
+
+} {} {}} C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Program_Counter_Pipe.v {1 {vlog -work work -nocovercells C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Program_Counter_Pipe.v
+Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+-- Compiling module Program_Counter_Pipe
+
+Top level modules:
+	Program_Counter_Pipe
+
+} {} {}} C:/altera/90/modelsim_ase/Labs/RVPL_Tb/reg_mem_wb.v {1 {vlog -work work -nocovercells C:/altera/90/modelsim_ase/Labs/RVPL_Tb/reg_mem_wb.v
+Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+-- Compiling module reg_mem_wb
+
+Top level modules:
+	reg_mem_wb
+
+} {} {}} C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Register_File.v {1 {vlog -work work -nocovercells C:/altera/90/modelsim_ase/Labs/RVPL_Tb/Register_File.v
+Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+-- Compiling module Register_File
+
+Top level modules:
+	Register_File
+
+} {} {}}

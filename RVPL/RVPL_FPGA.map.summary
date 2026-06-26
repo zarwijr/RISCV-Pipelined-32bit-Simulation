@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Jun 26 15:19:56 2026
+Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
+Revision Name : RVPL_FPGA
+Top-level Entity Name : Pipelined_RISCV
+Family : Cyclone II
+Total logic elements : 1,041
+    Total combinational functions : 887
+    Dedicated logic registers : 482
+Total registers : 482
+Total pins : 296
+Total virtual pins : 0
+Total memory bits : 3,072
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
